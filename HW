@@ -1,0 +1,34 @@
+const generateRandomNumber = () => {
+  return Math.round(Math.random() * 100);
+}
+
+const isCorrect = (number1, number2) => {
+  return number1 + number2;
+}
+
+const startRound = () => {
+
+const randomNumber1 = generateRandomNumber();
+const randomNumber2 = generateRandomNumber();
+const answer = prompt(`Найдите сумму чисел ${randomNumber1} и ${randomNumber2}`);
+const correctAnswer = isCorrect(randomNumber1, randomNumber2);
+
+if (answer === correctAnswer.toString()) {
+  alert ("Ответ правильный!");
+  return true;
+} else {
+ alert (`Ответ неправильный! Правильный ответ: "${correctAnswer}".`);
+return false;
+}
+}
+
+const startGame = () => {
+ const isCorrect = startRound();
+ if (!isCorrect) {
+    alert ("Вы проиграли!");
+  return;
+ }
+  alert ("Поздравляем с победой!");
+}
+
+startGame();
